@@ -4,8 +4,9 @@ class List
 	/// <summary>
 	/// Nodo simplemente enlazado
 	/// </summary>
-	struct Node
+	class Node
 	{
+	  public: 
 		/// <summary>
 		/// Información a almacenar
 		/// </summary>
@@ -22,14 +23,15 @@ private:
 	/// Apuntador al primer Nodo dentro de la lista (cabeza)
 	/// </summary>
 	Node* header = nullptr;
+	Node* cola = nullptr;
+	int contador = 0; 
 
 public:
 	/// <summary>
 	/// Agrega un elemento al FINAL de la lista
 	/// </summary>
 	/// <param name="item">Elemento a agregar</param>
-	void Add(int item);
-
+	void Add(int item); 
 	/// <summary>
 	/// Elimina todos los elementos de la Lista.
 	/// </summary>
