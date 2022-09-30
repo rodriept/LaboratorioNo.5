@@ -5,13 +5,22 @@ void List::Add(int item)
 	MiNodo->data = item; 
 	if (contador == 0) //Cuando la lista esta vacía
 	{
-		header = &MiNodo;
-		cola = &MiNodo;
+		header = MiNodo;
+		cola = MiNodo;
 	}
 	else //Cuando la lista ya posee elementos 
 	{
-		cola->next = &MiNodo;
-		cola = &MiNodo;
+		cola->next = MiNodo;
+		cola = MiNodo;
 	}
 	contador++; 
+}
+void List::Clear()
+{
+	header = nullptr;
+}
+int List::Count()
+{
+
+	return contador;
 }
