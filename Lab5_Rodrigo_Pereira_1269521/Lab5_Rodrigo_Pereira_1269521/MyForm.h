@@ -50,6 +50,9 @@ namespace Lab5RodrigoPereira1269521 {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::TextBox^ TBVerificarValorList;
 	private: System::Windows::Forms::Button^ BVerificarValor;
+	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::TextBox^ TBEncontrarIndice;
+	private: System::Windows::Forms::Button^ button1;
 	protected:
 
 	private:
@@ -80,6 +83,9 @@ namespace Lab5RodrigoPereira1269521 {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->TBVerificarValorList = (gcnew System::Windows::Forms::TextBox());
 			this->BVerificarValor = (gcnew System::Windows::Forms::Button());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->TBEncontrarIndice = (gcnew System::Windows::Forms::TextBox());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -185,11 +191,11 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BObtenerValor
 			// 
-			this->BObtenerValor->Location = System::Drawing::Point(50, 178);
+			this->BObtenerValor->Location = System::Drawing::Point(37, 178);
 			this->BObtenerValor->Name = L"BObtenerValor";
-			this->BObtenerValor->Size = System::Drawing::Size(75, 23);
+			this->BObtenerValor->Size = System::Drawing::Size(100, 23);
 			this->BObtenerValor->TabIndex = 11;
-			this->BObtenerValor->Text = L"Obtener";
+			this->BObtenerValor->Text = L"Obtener Posición";
 			this->BObtenerValor->UseVisualStyleBackColor = true;
 			this->BObtenerValor->Click += gcnew System::EventHandler(this, &MyForm::BObtenerValor_Click);
 			// 
@@ -219,11 +225,40 @@ namespace Lab5RodrigoPereira1269521 {
 			this->BVerificarValor->UseVisualStyleBackColor = true;
 			this->BVerificarValor->Click += gcnew System::EventHandler(this, &MyForm::BVerificarValor_Click);
 			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(247, 136);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(182, 13);
+			this->label7->TabIndex = 15;
+			this->label7->Text = L"Obtener el indice del valor ingresado:";
+			// 
+			// TBEncontrarIndice
+			// 
+			this->TBEncontrarIndice->Location = System::Drawing::Point(284, 152);
+			this->TBEncontrarIndice->Name = L"TBEncontrarIndice";
+			this->TBEncontrarIndice->Size = System::Drawing::Size(100, 20);
+			this->TBEncontrarIndice->TabIndex = 16;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(287, 178);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(97, 28);
+			this->button1->TabIndex = 17;
+			this->button1->Text = L"Obtener indice";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(519, 515);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->TBEncontrarIndice);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->BVerificarValor);
 			this->Controls->Add(this->TBVerificarValorList);
 			this->Controls->Add(this->label6);
@@ -304,6 +339,21 @@ namespace Lab5RodrigoPereira1269521 {
 		{
 			MessageBox::Show("El valor a verificar no se encuentra en la lista", "Error: Valor no encontrado", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
+    }
+    private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) 
+    {
+		//Boton para encontrar el indice del valor ingresado
+		int Valor;
+		Valor = Convert::ToInt32(TBEncontrarIndice->Text);
+		if (MiLista->IndexOf(Valor) == -1)
+		{
+			MessageBox::Show("El valor no se encuentra en la lista ", "Error: indice no encontrado", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else
+		{
+			MessageBox::Show("El índice del valor es " + MiLista->IndexOf(Valor).ToString(), "Indice encontrado en la lista", MessageBoxButtons::OK);
+		}
+		
     }
 };
 }

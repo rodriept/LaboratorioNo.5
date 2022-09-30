@@ -39,6 +39,21 @@ bool List::Contains(int item)
 	}
 	return false; 
 }
+int List::IndexOf(int item)
+{
+	int Cont = 0;
+	Node* Temporal = header; 
+	while ((Temporal) && Cont < contador)
+	{
+		if (item == Temporal->data)
+		{
+			return Cont;
+		}
+		Temporal = Temporal->next;
+		Cont++;
+	}
+	return -1;
+}
 int List::GetItem(int index)
 {
 	int Cont = 0;
@@ -53,4 +68,8 @@ int List::GetItem(int index)
 		Cont++;
 	}
 	return -1;
+}
+void List::SetItem(int index, int item)
+{
+
 }
