@@ -26,7 +26,18 @@ int List::Count()
 }
 bool List::Contains(int item)
 {
-	return true;
+	int Cont = 0;
+	Node* Temporal = header;
+	while (Cont != contador)
+	{
+		if (item == Temporal->data)
+		{
+			return true;
+		}
+		Temporal = Temporal->next;
+		Cont++;
+	}
+	return false; 
 }
 int List::GetItem(int index)
 {

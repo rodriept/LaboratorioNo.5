@@ -47,6 +47,9 @@ namespace Lab5RodrigoPereira1269521 {
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::TextBox^ TBObtenerValor;
 	private: System::Windows::Forms::Button^ BObtenerValor;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ TBVerificarValorList;
+	private: System::Windows::Forms::Button^ BVerificarValor;
 	protected:
 
 	private:
@@ -74,6 +77,9 @@ namespace Lab5RodrigoPereira1269521 {
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->TBObtenerValor = (gcnew System::Windows::Forms::TextBox());
 			this->BObtenerValor = (gcnew System::Windows::Forms::Button());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->TBVerificarValorList = (gcnew System::Windows::Forms::TextBox());
+			this->BVerificarValor = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -118,7 +124,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(152, 51);
+			this->label3->Location = System::Drawing::Point(26, 336);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(111, 13);
 			this->label3->TabIndex = 4;
@@ -126,7 +132,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// ButBorrar
 			// 
-			this->ButBorrar->Location = System::Drawing::Point(173, 67);
+			this->ButBorrar->Location = System::Drawing::Point(40, 352);
 			this->ButBorrar->Name = L"ButBorrar";
 			this->ButBorrar->Size = System::Drawing::Size(75, 23);
 			this->ButBorrar->TabIndex = 5;
@@ -137,7 +143,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(294, 51);
+			this->label4->Location = System::Drawing::Point(152, 51);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(140, 13);
 			this->label4->TabIndex = 6;
@@ -145,7 +151,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BVerCantDatos
 			// 
-			this->BVerCantDatos->Location = System::Drawing::Point(297, 67);
+			this->BVerCantDatos->Location = System::Drawing::Point(180, 67);
 			this->BVerCantDatos->Name = L"BVerCantDatos";
 			this->BVerCantDatos->Size = System::Drawing::Size(75, 23);
 			this->BVerCantDatos->TabIndex = 7;
@@ -156,7 +162,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// TBCantDatos
 			// 
 			this->TBCantDatos->Enabled = false;
-			this->TBCantDatos->Location = System::Drawing::Point(378, 70);
+			this->TBCantDatos->Location = System::Drawing::Point(190, 93);
 			this->TBCantDatos->Name = L"TBCantDatos";
 			this->TBCantDatos->Size = System::Drawing::Size(56, 20);
 			this->TBCantDatos->TabIndex = 8;
@@ -166,9 +172,9 @@ namespace Lab5RodrigoPereira1269521 {
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(12, 136);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(160, 13);
+			this->label5->Size = System::Drawing::Size(163, 13);
 			this->label5->TabIndex = 9;
-			this->label5->Text = L"Obtener el valor de una posición";
+			this->label5->Text = L"Obtener el valor de una posición:";
 			// 
 			// TBObtenerValor
 			// 
@@ -187,11 +193,40 @@ namespace Lab5RodrigoPereira1269521 {
 			this->BObtenerValor->UseVisualStyleBackColor = true;
 			this->BObtenerValor->Click += gcnew System::EventHandler(this, &MyForm::BObtenerValor_Click);
 			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(12, 215);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(207, 13);
+			this->label6->TabIndex = 12;
+			this->label6->Text = L"Verificar si el valor se encuentra en la lista:";
+			// 
+			// TBVerificarValorList
+			// 
+			this->TBVerificarValorList->Location = System::Drawing::Point(50, 231);
+			this->TBVerificarValorList->Name = L"TBVerificarValorList";
+			this->TBVerificarValorList->Size = System::Drawing::Size(100, 20);
+			this->TBVerificarValorList->TabIndex = 13;
+			// 
+			// BVerificarValor
+			// 
+			this->BVerificarValor->Location = System::Drawing::Point(62, 257);
+			this->BVerificarValor->Name = L"BVerificarValor";
+			this->BVerificarValor->Size = System::Drawing::Size(75, 23);
+			this->BVerificarValor->TabIndex = 14;
+			this->BVerificarValor->Text = L"Verificar";
+			this->BVerificarValor->UseVisualStyleBackColor = true;
+			this->BVerificarValor->Click += gcnew System::EventHandler(this, &MyForm::BVerificarValor_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(519, 515);
+			this->Controls->Add(this->BVerificarValor);
+			this->Controls->Add(this->TBVerificarValorList);
+			this->Controls->Add(this->label6);
 			this->Controls->Add(this->BObtenerValor);
 			this->Controls->Add(this->TBObtenerValor);
 			this->Controls->Add(this->label5);
@@ -234,27 +269,41 @@ namespace Lab5RodrigoPereira1269521 {
     }
     private: System::Void BVerCantDatos_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
-		TBCantDatos->Text = MiLista->Count().ToString();
+		TBCantDatos->Text = MiLista->Count().ToString(); //Ir al metodo Count y mostrar en un TextBox la cantidad de valores que hay en la lista
 		
     }
     private: System::Void BObtenerValor_Click(System::Object^ sender, System::EventArgs^ e) 
     {
+		//Ver el valor en la que se encuentra en la posición ingresada
 		int index;
 		index = Convert::ToInt32(TBObtenerValor->Text);
-		if (index < 0)
+		if (index < 0) //Si la posición ingresada es menor a 0 da error
 		{
 			MessageBox::Show("Posición no válida en la lista", "Error encontrado", MessageBoxButtons::OK,MessageBoxIcon::Error);
 
 		}
-		else if (index > MiLista->Count()-1 || index > MiLista->Count()-1)
+		else if (index > MiLista->Count()-1) //Si en la posición ingresada es mayor a la que llega la lista
 		{
 			MessageBox::Show("Posición no válida en la lista", "Error encontrado", MessageBoxButtons::OK, MessageBoxIcon::Error);
 		}
-		else
-		{
+		else //ir al método GetItem y mostrar el valor por medio de un MessageBox
+ 		{
 			MessageBox::Show("Valor encontrado en la posición " + "[" + index + "] = " + MiLista->GetItem(index).ToString(), "Valor encontrado", MessageBoxButtons::OK,MessageBoxIcon::Asterisk);
 		}
 
+    }
+    private: System::Void BVerificarValor_Click(System::Object^ sender, System::EventArgs^ e)  
+    {
+		bool Verificar; 
+		Verificar = MiLista->Contains(Convert::ToInt32(TBVerificarValorList->Text));
+		if (Verificar == true)
+		{
+			MessageBox::Show("El valor a verificar si se encuentra en la lista", "Valor encontrado", MessageBoxButtons::OK);
+		}
+		else
+		{
+			MessageBox::Show("El valor a verificar no se encuentra en la lista", "Error: Valor no encontrado", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
     }
 };
 }
