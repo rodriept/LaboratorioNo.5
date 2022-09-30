@@ -18,9 +18,28 @@ void List::Add(int item)
 void List::Clear()
 {
 	header = nullptr;
+	contador = 0; 
 }
 int List::Count()
 {
-
 	return contador;
+}
+bool List::Contains(int item)
+{
+	return true;
+}
+int List::GetItem(int index)
+{
+	int Cont = 0;
+	Node* Temporal = header;
+	while ((Temporal) && Cont <= index)
+	{
+		if (Cont == index)
+		{
+			return Temporal->data;
+		}
+		Temporal = Temporal->next;
+		Cont++;
+	}
+	return -1;
 }
