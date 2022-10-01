@@ -15,16 +15,16 @@ void List::Add(int item)
 	}
 	contador++; 
 }
-void List::Clear()
+void List::Clear() //Para borrar toda la lista
 {
 	header = nullptr;
 	contador = 0; 
 }
-int List::Count()
+int List::Count() //Para saber cuantos valores hay en la lista
 {
 	return contador;
 }
-bool List::Contains(int item)
+bool List::Contains(int item) //Para saber si contiene el valor ingresado en la lista
 {
 	int Cont = 0;
 	Node* Temporal = header;
@@ -39,7 +39,7 @@ bool List::Contains(int item)
 	}
 	return false; 
 }
-int List::IndexOf(int item)
+int List::IndexOf(int item)//Obtiene el índice de la primera ocurrencia por medio del valor
 {
 	int Cont = 0;
 	Node* Temporal = header; 
@@ -54,7 +54,7 @@ int List::IndexOf(int item)
 	}
 	return -1;
 }
-int List::GetItem(int index)
+int List::GetItem(int index) //Para saber el valor que tiene en la posicion ingresada
 {
 	int Cont = 0;
 	Node* Temporal = header;
@@ -69,7 +69,7 @@ int List::GetItem(int index)
 	}
 	return -1;
 }
-void List::SetItem(int index, int item)
+void List::SetItem(int index, int item) //Cambiar un elemento en la posición en la que se indica
 {
     Node* Temporal = header;
 	int Cont = 0;
@@ -86,7 +86,7 @@ void List::SetItem(int index, int item)
 	}
 	
 }
-bool List::Remove(int item)
+bool List::Remove(int item) //Elimina el elemento de la lista por medio del elemento dado
 {
 	Node* Temporal = header;
 	Node* Anterior = nullptr;
@@ -113,5 +113,29 @@ bool List::Remove(int item)
 		delete Temporal;
 		contador--;
 		return true;
+	}
+}
+void List::RemoveAt(int index) //Elimina el elemento por medio de la posición dada
+{
+	Node* Temporal = header;
+	Node* anterior = nullptr;
+	int cont = 0;
+	while((Temporal != nullptr) && cont != index)
+	{
+		anterior = Temporal;
+		Temporal = Temporal->next;
+		cont++;
+	}
+    if(anterior == nullptr)
+	{
+		header = header->next;
+		contador--;
+		delete Temporal;
+	}
+	else
+	{
+		anterior->next = Temporal->next;
+		delete Temporal;
+		contador--;
 	}
 }

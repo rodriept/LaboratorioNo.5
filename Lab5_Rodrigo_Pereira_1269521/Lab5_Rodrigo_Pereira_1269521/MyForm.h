@@ -64,6 +64,11 @@ namespace Lab5RodrigoPereira1269521 {
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::TextBox^ TBElementoEliminar;
 	private: System::Windows::Forms::Button^ BEliminar;
+	private: System::Windows::Forms::Label^ label13;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::TextBox^ TBPosicionEliminar;
+
+	private: System::Windows::Forms::Button^ BElimnarConPosición;
 
 	protected:
 
@@ -108,6 +113,10 @@ namespace Lab5RodrigoPereira1269521 {
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->TBElementoEliminar = (gcnew System::Windows::Forms::TextBox());
 			this->BEliminar = (gcnew System::Windows::Forms::Button());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->label14 = (gcnew System::Windows::Forms::Label());
+			this->TBPosicionEliminar = (gcnew System::Windows::Forms::TextBox());
+			this->BElimnarConPosición = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -153,7 +162,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(26, 336);
+			this->label3->Location = System::Drawing::Point(12, 464);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(111, 13);
 			this->label3->TabIndex = 4;
@@ -162,7 +171,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// ButBorrar
 			// 
 			this->ButBorrar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->ButBorrar->Location = System::Drawing::Point(40, 352);
+			this->ButBorrar->Location = System::Drawing::Point(40, 480);
 			this->ButBorrar->Name = L"ButBorrar";
 			this->ButBorrar->Size = System::Drawing::Size(75, 23);
 			this->ButBorrar->TabIndex = 5;
@@ -334,16 +343,16 @@ namespace Lab5RodrigoPereira1269521 {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(262, 325);
+			this->label11->Location = System::Drawing::Point(12, 324);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(151, 13);
+			this->label11->Size = System::Drawing::Size(235, 13);
 			this->label11->TabIndex = 24;
-			this->label11->Text = L"Eliminar un elemento en la lista";
+			this->label11->Text = L"Eliminar un elemento en la lista dado el elemento";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(253, 349);
+			this->label12->Location = System::Drawing::Point(15, 348);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(102, 13);
 			this->label12->TabIndex = 25;
@@ -351,7 +360,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// TBElementoEliminar
 			// 
-			this->TBElementoEliminar->Location = System::Drawing::Point(361, 349);
+			this->TBElementoEliminar->Location = System::Drawing::Point(119, 348);
 			this->TBElementoEliminar->Name = L"TBElementoEliminar";
 			this->TBElementoEliminar->Size = System::Drawing::Size(100, 20);
 			this->TBElementoEliminar->TabIndex = 26;
@@ -359,7 +368,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// BEliminar
 			// 
 			this->BEliminar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->BEliminar->Location = System::Drawing::Point(309, 375);
+			this->BEliminar->Location = System::Drawing::Point(75, 374);
 			this->BEliminar->Name = L"BEliminar";
 			this->BEliminar->Size = System::Drawing::Size(75, 23);
 			this->BEliminar->TabIndex = 27;
@@ -367,11 +376,51 @@ namespace Lab5RodrigoPereira1269521 {
 			this->BEliminar->UseVisualStyleBackColor = true;
 			this->BEliminar->Click += gcnew System::EventHandler(this, &MyForm::BEliminar_Click);
 			// 
+			// label13
+			// 
+			this->label13->AutoSize = true;
+			this->label13->Location = System::Drawing::Point(269, 324);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(231, 13);
+			this->label13->TabIndex = 28;
+			this->label13->Text = L"Eliminar un elemento en la lista dado la posición";
+			// 
+			// label14
+			// 
+			this->label14->AutoSize = true;
+			this->label14->Location = System::Drawing::Point(273, 351);
+			this->label14->Name = L"label14";
+			this->label14->Size = System::Drawing::Size(98, 13);
+			this->label14->TabIndex = 29;
+			this->label14->Text = L"Ingrese la posición:";
+			// 
+			// TBPosicionEliminar
+			// 
+			this->TBPosicionEliminar->Location = System::Drawing::Point(377, 351);
+			this->TBPosicionEliminar->Name = L"TBPosicionEliminar";
+			this->TBPosicionEliminar->Size = System::Drawing::Size(107, 20);
+			this->TBPosicionEliminar->TabIndex = 30;
+			// 
+			// BElimnarConPosición
+			// 
+			this->BElimnarConPosición->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->BElimnarConPosición->Location = System::Drawing::Point(337, 377);
+			this->BElimnarConPosición->Name = L"BElimnarConPosición";
+			this->BElimnarConPosición->Size = System::Drawing::Size(75, 23);
+			this->BElimnarConPosición->TabIndex = 31;
+			this->BElimnarConPosición->Text = L"Eliminar";
+			this->BElimnarConPosición->UseVisualStyleBackColor = true;
+			this->BElimnarConPosición->Click += gcnew System::EventHandler(this, &MyForm::BElimnarConPosición_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(519, 515);
+			this->ClientSize = System::Drawing::Size(534, 529);
+			this->Controls->Add(this->BElimnarConPosición);
+			this->Controls->Add(this->TBPosicionEliminar);
+			this->Controls->Add(this->label14);
+			this->Controls->Add(this->label13);
 			this->Controls->Add(this->BEliminar);
 			this->Controls->Add(this->TBElementoEliminar);
 			this->Controls->Add(this->label12);
@@ -507,6 +556,30 @@ namespace Lab5RodrigoPereira1269521 {
 			MiLista->Remove(ItemDelete);
 			MessageBox::Show("El elemento se a eliminado de la lista", "Elimando correctamente", MessageBoxButtons::OK);
 		}
+    }
+    private: System::Void BElimnarConPosición_Click(System::Object^ sender, System::EventArgs^ e) 
+    {
+		int IndexDelete;
+		try
+		{
+			IndexDelete = Convert::ToInt32(TBPosicionEliminar->Text);
+			if (IndexDelete > MiLista->Count() || IndexDelete < 0)
+			{
+				MessageBox::Show("La posición no existe en la lista", "Error: Posición no existente", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			else
+			{
+				MiLista->RemoveAt(Convert::ToInt32(TBPosicionEliminar->Text));
+				MessageBox::Show("El elemento se a eliminado de la lista", "Elimando correctamente", MessageBoxButtons::OK);
+			}
+				
+		}
+	    catch (...)
+		{
+			MessageBox::Show("Ingrese una posición", "Error: Posición no ingresada", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		
+		
     }
 };
 }
