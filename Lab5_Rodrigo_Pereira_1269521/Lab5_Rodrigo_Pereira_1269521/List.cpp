@@ -71,20 +71,47 @@ int List::GetItem(int index)
 }
 void List::SetItem(int index, int item)
 {
-	Node* Temporal = header;
+    Node* Temporal = header;
 	int Cont = 0;
 	bool IndexEncontrado = false;
-	if (Temporal != nullptr)
+	while (IndexEncontrado == false)
 	{
-		while (IndexEncontrado == false)
+		if (Cont == index)
 		{
-			if (Cont == index)
-			{
-				Temporal->data = item;
-				IndexEncontrado = true;
-			}
-			Temporal = Temporal->next;
-			Cont++;
+			Temporal->data = item;
+			IndexEncontrado = true;
 		}
+		Temporal = Temporal->next;
+		Cont++;
+	}
+	
+}
+bool List::Remove(int item)
+{
+	Node* Temporal = header;
+	Node* Anterior = nullptr;
+	while ((Temporal != nullptr ) && (Temporal->data != item))
+	{
+		Anterior = Temporal;
+		Temporal = Temporal->next;
+	}
+	if (Temporal == nullptr)
+	{
+		return false;
+	}
+	else if(Anterior == nullptr)
+	{
+		header = header->next;
+		delete Temporal;
+		contador--;
+		return true;
+
+	}
+	else
+	{
+		Anterior->next = Temporal->next;
+		delete Temporal;
+		contador--;
+		return true;
 	}
 }

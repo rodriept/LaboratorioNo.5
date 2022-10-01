@@ -55,7 +55,7 @@ public:
 	/// </summary>
 	/// <param name="item">Elemento a verificar</param>
 	/// <returns>El índice (base 0) de la primera ocurrencia si lo encontró, -1 en caso contrario</returns>
-	int IndexOf(int item);
+	int IndexOf(int item); 
 
 	/// <summary>
 	/// Inserta un elemento en una posición específica de la lista

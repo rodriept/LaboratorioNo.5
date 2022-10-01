@@ -60,6 +60,10 @@ namespace Lab5RodrigoPereira1269521 {
 	private: System::Windows::Forms::TextBox^ TBValorACambiar;
 
 	private: System::Windows::Forms::Button^ BCambiarElemento;
+	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::TextBox^ TBElementoEliminar;
+	private: System::Windows::Forms::Button^ BEliminar;
 
 	protected:
 
@@ -100,6 +104,10 @@ namespace Lab5RodrigoPereira1269521 {
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->TBValorACambiar = (gcnew System::Windows::Forms::TextBox());
 			this->BCambiarElemento = (gcnew System::Windows::Forms::Button());
+			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->TBElementoEliminar = (gcnew System::Windows::Forms::TextBox());
+			this->BEliminar = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -133,7 +141,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BIngresarDatoList
 			// 
-			this->BIngresarDatoList->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->BIngresarDatoList->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->BIngresarDatoList->Location = System::Drawing::Point(15, 93);
 			this->BIngresarDatoList->Name = L"BIngresarDatoList";
 			this->BIngresarDatoList->Size = System::Drawing::Size(100, 23);
@@ -153,6 +161,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// ButBorrar
 			// 
+			this->ButBorrar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->ButBorrar->Location = System::Drawing::Point(40, 352);
 			this->ButBorrar->Name = L"ButBorrar";
 			this->ButBorrar->Size = System::Drawing::Size(75, 23);
@@ -164,7 +173,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(152, 51);
+			this->label4->Location = System::Drawing::Point(269, 51);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(140, 13);
 			this->label4->TabIndex = 6;
@@ -172,8 +181,8 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BVerCantDatos
 			// 
-			this->BVerCantDatos->FlatStyle = System::Windows::Forms::FlatStyle::System;
-			this->BVerCantDatos->Location = System::Drawing::Point(180, 67);
+			this->BVerCantDatos->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->BVerCantDatos->Location = System::Drawing::Point(300, 67);
 			this->BVerCantDatos->Name = L"BVerCantDatos";
 			this->BVerCantDatos->Size = System::Drawing::Size(75, 23);
 			this->BVerCantDatos->TabIndex = 7;
@@ -184,7 +193,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// TBCantDatos
 			// 
 			this->TBCantDatos->Enabled = false;
-			this->TBCantDatos->Location = System::Drawing::Point(190, 93);
+			this->TBCantDatos->Location = System::Drawing::Point(309, 95);
 			this->TBCantDatos->Name = L"TBCantDatos";
 			this->TBCantDatos->Size = System::Drawing::Size(56, 20);
 			this->TBCantDatos->TabIndex = 8;
@@ -207,7 +216,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BObtenerValor
 			// 
-			this->BObtenerValor->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->BObtenerValor->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->BObtenerValor->Location = System::Drawing::Point(37, 178);
 			this->BObtenerValor->Name = L"BObtenerValor";
 			this->BObtenerValor->Size = System::Drawing::Size(100, 23);
@@ -234,7 +243,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BVerificarValor
 			// 
-			this->BVerificarValor->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->BVerificarValor->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->BVerificarValor->Location = System::Drawing::Point(62, 257);
 			this->BVerificarValor->Name = L"BVerificarValor";
 			this->BVerificarValor->Size = System::Drawing::Size(75, 23);
@@ -261,7 +270,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// button1
 			// 
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Location = System::Drawing::Point(287, 178);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(97, 28);
@@ -273,7 +282,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(245, 215);
+			this->label8->Location = System::Drawing::Point(247, 215);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(216, 13);
 			this->label8->TabIndex = 18;
@@ -289,7 +298,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(247, 234);
+			this->label9->Location = System::Drawing::Point(253, 234);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(50, 13);
 			this->label9->TabIndex = 20;
@@ -298,7 +307,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(245, 257);
+			this->label10->Location = System::Drawing::Point(247, 257);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(86, 13);
 			this->label10->TabIndex = 21;
@@ -313,7 +322,7 @@ namespace Lab5RodrigoPereira1269521 {
 			// 
 			// BCambiarElemento
 			// 
-			this->BCambiarElemento->FlatStyle = System::Windows::Forms::FlatStyle::System;
+			this->BCambiarElemento->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->BCambiarElemento->Location = System::Drawing::Point(309, 280);
 			this->BCambiarElemento->Name = L"BCambiarElemento";
 			this->BCambiarElemento->Size = System::Drawing::Size(75, 23);
@@ -322,11 +331,51 @@ namespace Lab5RodrigoPereira1269521 {
 			this->BCambiarElemento->UseVisualStyleBackColor = true;
 			this->BCambiarElemento->Click += gcnew System::EventHandler(this, &MyForm::BCambiarElemento_Click);
 			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Location = System::Drawing::Point(262, 325);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(151, 13);
+			this->label11->TabIndex = 24;
+			this->label11->Text = L"Eliminar un elemento en la lista";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(253, 349);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(102, 13);
+			this->label12->TabIndex = 25;
+			this->label12->Text = L"Ingrese el elemento:";
+			// 
+			// TBElementoEliminar
+			// 
+			this->TBElementoEliminar->Location = System::Drawing::Point(361, 349);
+			this->TBElementoEliminar->Name = L"TBElementoEliminar";
+			this->TBElementoEliminar->Size = System::Drawing::Size(100, 20);
+			this->TBElementoEliminar->TabIndex = 26;
+			// 
+			// BEliminar
+			// 
+			this->BEliminar->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->BEliminar->Location = System::Drawing::Point(309, 375);
+			this->BEliminar->Name = L"BEliminar";
+			this->BEliminar->Size = System::Drawing::Size(75, 23);
+			this->BEliminar->TabIndex = 27;
+			this->BEliminar->Text = L"Eliminar";
+			this->BEliminar->UseVisualStyleBackColor = true;
+			this->BEliminar->Click += gcnew System::EventHandler(this, &MyForm::BEliminar_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(519, 515);
+			this->Controls->Add(this->BEliminar);
+			this->Controls->Add(this->TBElementoEliminar);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->label11);
 			this->Controls->Add(this->BCambiarElemento);
 			this->Controls->Add(this->TBValorACambiar);
 			this->Controls->Add(this->label10);
@@ -434,7 +483,30 @@ namespace Lab5RodrigoPereira1269521 {
     }
     private: System::Void BCambiarElemento_Click(System::Object^ sender, System::EventArgs^ e) 
     {
-		MiLista->SetItem(Convert::ToInt32(TBPosicion->Text),Convert::ToInt32(TBValorACambiar->Text));
+		if(TBPosicion->Text == nullptr|| TBValorACambiar == nullptr)
+		{
+			MessageBox::Show("Ingrese la posición del valor que quiere cambiar y el valor nuevo", "Error: Datos no ingresado", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else
+		{
+			MiLista->SetItem(Convert::ToInt32(TBPosicion->Text), Convert::ToInt32(TBValorACambiar->Text));
+			MessageBox::Show("Valor cambiado en el indice " + TBPosicion->Text + " Correctamente", "Valor cambiado correctamente", MessageBoxButtons::OK);
+		}
+    }
+
+    private: System::Void BEliminar_Click(System::Object^ sender, System::EventArgs^ e) 
+    {
+		int ItemDelete; 
+		ItemDelete = Convert::ToInt32(TBElementoEliminar->Text);
+		if (MiLista->Remove(ItemDelete) == false)
+		{
+			MessageBox::Show("El elemento no se encuentra en la lista", "Error: Elemento no encontrado", MessageBoxButtons::OK, MessageBoxIcon::Error);
+		}
+		else
+		{
+			MiLista->Remove(ItemDelete);
+			MessageBox::Show("El elemento se a eliminado de la lista", "Elimando correctamente", MessageBoxButtons::OK);
+		}
     }
 };
 }
