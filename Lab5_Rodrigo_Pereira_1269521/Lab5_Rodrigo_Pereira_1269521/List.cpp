@@ -71,5 +71,20 @@ int List::GetItem(int index)
 }
 void List::SetItem(int index, int item)
 {
-
+	Node* Temporal = header;
+	int Cont = 0;
+	bool IndexEncontrado = false;
+	if (Temporal != nullptr)
+	{
+		while (IndexEncontrado == false)
+		{
+			if (Cont == index)
+			{
+				Temporal->data = item;
+				IndexEncontrado = true;
+			}
+			Temporal = Temporal->next;
+			Cont++;
+		}
+	}
 }
