@@ -69,6 +69,14 @@ namespace Lab5RodrigoPereira1269521 {
 	private: System::Windows::Forms::TextBox^ TBPosicionEliminar;
 
 	private: System::Windows::Forms::Button^ BElimnarConPosición;
+	private: System::Windows::Forms::Button^ BIncersion;
+	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::TextBox^ TBPosicionDada;
+	private: System::Windows::Forms::TextBox^ TBElementoDeIncersion;
+
+
 
 	protected:
 
@@ -117,6 +125,12 @@ namespace Lab5RodrigoPereira1269521 {
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->TBPosicionEliminar = (gcnew System::Windows::Forms::TextBox());
 			this->BElimnarConPosición = (gcnew System::Windows::Forms::Button());
+			this->BIncersion = (gcnew System::Windows::Forms::Button());
+			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->TBPosicionDada = (gcnew System::Windows::Forms::TextBox());
+			this->TBElementoDeIncersion = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -412,11 +426,69 @@ namespace Lab5RodrigoPereira1269521 {
 			this->BElimnarConPosición->UseVisualStyleBackColor = true;
 			this->BElimnarConPosición->Click += gcnew System::EventHandler(this, &MyForm::BElimnarConPosición_Click);
 			// 
+			// BIncersion
+			// 
+			this->BIncersion->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->BIncersion->Location = System::Drawing::Point(334, 490);
+			this->BIncersion->Name = L"BIncersion";
+			this->BIncersion->Size = System::Drawing::Size(75, 23);
+			this->BIncersion->TabIndex = 32;
+			this->BIncersion->Text = L"Agregar";
+			this->BIncersion->UseVisualStyleBackColor = true;
+			this->BIncersion->Click += gcnew System::EventHandler(this, &MyForm::BIncersion_Click);
+			// 
+			// label15
+			// 
+			this->label15->AutoSize = true;
+			this->label15->Location = System::Drawing::Point(273, 425);
+			this->label15->Name = L"label15";
+			this->label15->Size = System::Drawing::Size(213, 13);
+			this->label15->TabIndex = 33;
+			this->label15->Text = L"Agregar un elemento en una posición dada:";
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(273, 447);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(53, 13);
+			this->label16->TabIndex = 34;
+			this->label16->Text = L"Posición: ";
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(273, 464);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(87, 13);
+			this->label17->TabIndex = 35;
+			this->label17->Text = L"Elemento nuevo:";
+			// 
+			// TBPosicionDada
+			// 
+			this->TBPosicionDada->Location = System::Drawing::Point(337, 441);
+			this->TBPosicionDada->Name = L"TBPosicionDada";
+			this->TBPosicionDada->Size = System::Drawing::Size(100, 20);
+			this->TBPosicionDada->TabIndex = 36;
+			// 
+			// TBElementoDeIncersion
+			// 
+			this->TBElementoDeIncersion->Location = System::Drawing::Point(362, 464);
+			this->TBElementoDeIncersion->Name = L"TBElementoDeIncersion";
+			this->TBElementoDeIncersion->Size = System::Drawing::Size(101, 20);
+			this->TBElementoDeIncersion->TabIndex = 37;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(534, 529);
+			this->Controls->Add(this->TBElementoDeIncersion);
+			this->Controls->Add(this->TBPosicionDada);
+			this->Controls->Add(this->label17);
+			this->Controls->Add(this->label16);
+			this->Controls->Add(this->label15);
+			this->Controls->Add(this->BIncersion);
 			this->Controls->Add(this->BElimnarConPosición);
 			this->Controls->Add(this->TBPosicionEliminar);
 			this->Controls->Add(this->label14);
@@ -580,6 +652,24 @@ namespace Lab5RodrigoPereira1269521 {
 		}
 		
 		
+    }
+    private: System::Void BIncersion_Click(System::Object^ sender, System::EventArgs^ e)
+    {
+		int posicion, Elemento;
+		try
+		{
+			posicion = Convert::ToInt32(TBPosicionDada->Text);
+			if (posicion > MiLista->Count() || posicion < 0)
+			{
+				MessageBox::Show("La posición dada no se encuentra adentro de la lista", "Erro: No existe la posición en la lista", MessageBoxButtons::OK, MessageBoxIcon::Error);
+			}
+			Elemento = Convert::ToInt32(TBElementoDeIncersion->Text);
+			MiLista->Insert(posicion, Elemento);
+		}
+		catch (...)
+		{
+				
+		}
     }
 };
 }

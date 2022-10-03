@@ -24,6 +24,7 @@ private:
 	/// </summary>
 	Node* header = nullptr;
 	Node* cola = nullptr;
+	Node* Incersion = new Node();
 	int contador = 0; 
 
 public:

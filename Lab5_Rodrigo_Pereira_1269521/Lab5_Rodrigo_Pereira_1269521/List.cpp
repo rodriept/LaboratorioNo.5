@@ -98,6 +98,7 @@ bool List::Remove(int item) //Elimina el elemento de la lista por medio del elem
 	if (Temporal == nullptr)
 	{
 		return false;
+		delete Temporal;
 	}
 	else if(Anterior == nullptr)
 	{
@@ -135,7 +136,33 @@ void List::RemoveAt(int index) //Elimina el elemento por medio de la posición da
 	else
 	{
 		anterior->next = Temporal->next;
-		delete Temporal;
 		contador--;
+		delete Temporal;
+		
+	}
+	
+}
+void List::Insert(int index, int item)
+{
+	Node* Temporal = header;
+	if (index == 0)
+	{
+		Temporal = Temporal->next;
+		Incersion->data = item;
+		header->next = Incersion;
+		Incersion->next = Temporal;
+		contador++;
+	}
+	else
+	{
+		for(int i = 0; i < index--;i++)
+		{
+		   Temporal = Temporal->next;
+		}
+		Incersion->data = item;
+		Incersion->next = Temporal->next;
+		Temporal->next = Incersion;
+		contador++;
+		
 	}
 }
